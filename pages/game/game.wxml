@@ -11,9 +11,7 @@
 
     </view>
     <view class='game-pollimg'>
-      <swiper
-        indicator-dots="true" autoplay="true" circular="true" 
-        interval="2000" duration="500" previous-margin="0px" next-margin="0px">
+      <swiper autoplay="true" circular="true" interval="2000" duration="500" previous-margin="0px" next-margin="0px">
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
             <image class="swiper-item-img" src="../../assets/img/{{item}}"></image>
@@ -23,9 +21,13 @@
     </view>
   </view>
   <view class='flex-column flex-center game-category'>
-    <view class='flex-row flex-start'>
-      <view class='category-item'>
-        rpg
+    <view class='flex-row flex-start game-category-row'>
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <image class='category-item-icon' src="../../assets/icon/rpg.png"></image>
+        </view>
+
+        <view class='flex-row flex-main-center flex-align-center'>rpg</view>
       </view>
       <view class='category-item'>
         动作
@@ -34,7 +36,7 @@
         文字
       </view>
     </view>
-    <view class='flex-row flex-start'>
+    <view class='flex-row flex-start game-category-row'>
       <view class='category-item'>
         rpg
       </view>

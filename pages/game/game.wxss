@@ -36,3 +36,24 @@ swiper{
 .swiper-item-img{
   width: 100%;
 }
+.game-category{
+  position: relative;
+  width: 100%;
+  margin-top:-30rpx;
+  z-index:100;
+  background-color: #fff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  margin-bottom: 10rpx;
+}
+.game-category-row{
+  padding: 30rpx 40rpx 0 40rpx;
+}
+.category-item{
+  border-radius: 35rpx;
+  margin:0 10rpx;
+}
+.category-item-icon{
+  height: 70rpx;
+  width:70rpx;
+}
