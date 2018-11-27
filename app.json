@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/game/game",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序体验店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/game/game",
+        "iconPath": "assets/icon/game_page.png",
+        "selectedIconPath": "assets/icon/game_page_selected.png",
+        "text": "游戏"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "assets/icon/person_1.png",
+        "selectedIconPath": "assets/icon/person_selected_1.png",
+        "text": "个人"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+<!--pages/game/game.wxml-->
+<view class='flex-column flex-main-start'>
+  <view class='game-header'>
+    <view class='flex-row flex-main-center game-search'>
+      <view class='game-search-input-left'>
+        xd
+      </view>
+      <view class='game-search-input'>
+        <input class='game-search-input-right' type='text' value='{{search_key}}'></input>
+      </view>
+
+    </view>
+    <view class='game-pollimg'>
+      <swiper
+        indicator-dots="true" autoplay="true" circular="true" 
+        interval="2000" duration="500" previous-margin="0px" next-margin="0px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image class="swiper-item-img" src="../../assets/img/{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class='flex-column flex-center game-category'>
+    <view class='flex-row flex-start'>
+      <view class='category-item'>
+        rpg
+      </view>
+      <view class='category-item'>
+        动作
+      </view>
+      <view class='category-item'>
+        文字
+      </view>
+    </view>
+    <view class='flex-row flex-start'>
+      <view class='category-item'>
+        rpg
+      </view>
+      <view class='category-item'>
+        动作
+      </view>
+      <view class='category-item'>
+        文字
+      </view>
+    </view>
+  </view>
+  <view class='flex-column flex-main-start game-content'>
+    <view class='flex-row flex-main-start game-content-item'>
+      <view flex-row flex-main-center flex-align-center>1</view>
+      <view class='flex-row flex-main-between'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          图片
+        </view>
+        <view class='flex-column flex-main-start'>
+          <view>使命召唤</view>
+          <view>评分5.5</view>
+          <view>112 313</view>
+        </view>
+      </view>
+      <view class='flex-row flex-main-center flex-align-center'>
+        试玩
+      </view>
+    </view>
+    <view class='flex-row flex-main-start game-content-item'>
+      <view flex-row flex-main-center flex-align-center>1</view>
+      <view class='flex-row flex-main-between'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          图片
+        </view>
+        <view class='flex-column flex-main-start'>
+          <view>使命召唤2</view>
+          <view>评分5.5</view>
+          <view>112 313</view>
+        </view>
+      </view>
+      <view class='flex-row flex-main-center flex-align-center'>
+        试玩
+      </view>
+    </view>
+    <view class=''>
+      more
+    </view>
+  </view>
+
+</view>
