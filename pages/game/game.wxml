@@ -24,27 +24,71 @@
     <view class='flex-row flex-start game-category-row'>
       <view class='flex-column flex-main-start category-item'>
         <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
           <image class='category-item-icon' src="../../assets/icon/rpg.png"></image>
+          </view>
         </view>
 
         <view class='flex-row flex-main-center flex-align-center'>rpg</view>
       </view>
-      <view class='category-item'>
-        动作
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
       </view>
-      <view class='category-item'>
-        文字
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
+      </view>
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
       </view>
     </view>
     <view class='flex-row flex-start game-category-row'>
-      <view class='category-item'>
-        rpg
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/rpg.png"></image>
+          </view>
+        </view>
+
+        <view class='flex-row flex-main-center flex-align-center'>rpg</view>
       </view>
-      <view class='category-item'>
-        动作
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
       </view>
-      <view class='category-item'>
-        文字
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
+      </view>
+      <view class='flex-column flex-main-start category-item'>
+        <view class='flex-row flex-main-center flex-align-center'>
+          <view class='categoru-item-wall'>
+          <image class='category-item-icon' src="../../assets/icon/fight.png"></image>
+          </view>
+        </view>
+        <view class='flex-row flex-main-center flex-align-center'>动作</view>
       </view>
     </view>
   </view>
