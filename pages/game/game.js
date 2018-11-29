@@ -5,8 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    search_key:'rpg',
-    background: ['lb1.jpg', 'lb2.jpg', 'lb3.jpg']
+    search_key: 'rpg',
+    background: ['lb1.jpg', 'lb2.jpg', 'lb3.jpg'],
+    categoryrows1: [
+      { 'image': '../../assets/icon/rpg.png', 'title': 'rpg' },
+      { 'image': '../../assets/icon/rpg.png', 'title': '文字' },
+      { 'image': '../../assets/icon/rpg.png', 'title': '冒险' },
+      { 'image': '../../assets/icon/rpg.png', 'title': 'morpg' },
+      { 'image': '../../assets/icon/rpg.png', 'title': 'act' }],
+    categoryrows2: [
+      { 'image': '../../assets/icon/fight.png', 'title': '动作' },
+      { 'image': '../../assets/icon/fight.png', 'title': '解密' },
+      { 'image': '../../assets/icon/fight.png', 'title': '人生' },
+      { 'image': '../../assets/icon/fight.png', 'title': '哲理' },
+      { 'image': '../../assets/icon/fight.png', 'title': '无类别' }]
   },
 
   /**
