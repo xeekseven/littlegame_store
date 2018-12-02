@@ -43,40 +43,51 @@
       </view>
     </view>
   </view>
-  <view class="flex-row flex-main-center flex-align-center game-now">
-  此刻最HOT
-  </view>
-  <view class='flex-column flex-main-start game-content'>
-    <view class='flex-row flex-main-start game-content-item'>
-      <view class='flex-row flex-main-center flex-align-center game-rank'>
-      <view class='flex-row flex-main-center flex-align-center game-rank-first'>
-      1
-      </view>
-      </view>
-      <view class='flex-row flex-main-between'>
-        <view class='flex-row flex-main-center flex-align-center game-rank-image'>
-        <image class='game-image' src='../../assets/img/logo.jpg' /></view>
-        <view class='flex-column flex-main-start'>
-          <view>使命召唤</view>
-          <view>评分5.5</view>
-          <view>112 313</view>
+  <view class="flex-row flex-main-center flex-align-center game-now">此刻最HOT</view>
+  <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
+    <view class='flex-column flex-main-between'>
+      <view class="flex-row flex-main-start game-content-item">
+        <view class='flex-row flex-main-center flex-align-center game-rank'>
+          <view class='flex-row flex-main-center flex-align-center game-rank-first'>
+            {{item.rank}}
+          </view>
         </view>
-      </view>
-      <view class='flex-row flex-main-center flex-align-center'>试玩</view>
-    </view>
-    <view class='game-content-hr'></view>
-    <view class='flex-row flex-main-start game-content-item'>
-      <view flex-row flex-main-center flex-align-center>1</view>
-      <view class='flex-row flex-main-between'>
-        <view class='flex-row flex-main-center flex-align-center'>图片</view>
-        <view class='flex-column flex-main-start'>
-          <view>使命召唤2</view>
-          <view>评分5.5</view>
-          <view>112 313</view>
+        <view class='flex-row flex-main-between'>
+          <view class='flex-row flex-main-center flex-align-center game-rank-image'>
+            <image class='game-image' src='{{item.image_path}}' />
+          </view>
+          <view class='flex-row flex-main-center flex-align-center'>
+            <view class='flex-column flex-main-start game-content-item-info'>
+              <view class="game-content-item-title">{{item.title}}</view>
+              <view class="flex-row flex-main-start flex-align-center game-content-item-grade">
+                <image class="star" src="../../assets/icon/w_star.png" />
+                <image class="star" src="../../assets/icon/h_star.png" />
+                {{item.grade}}
+              </view>
+              <view class="flex-row flex-main-start flex-align-end game-content-item-taglist">
+                <view wx:for="{{item.tags}}" wx:for-item="tagitem" wx:for-index="tagindex" class="flex-row flex-main-center flex-align-center game-content-item-tag">
+                  {{tagitem}}
+                </view>
+              </view>
+            </view>
+          </view>
         </view>
+        <view class="flex-row flex-main-center flex-align-center">
+          <view class='flex-column flex-main-between flex-align-center game-play'>
+          <view class="flex-row flex-main-start flex-align-center game-ediertag">
+            <image style="height:32rpx;width:32rpx;margin-right:8rpx" src="../../assets/icon/hot16.png" />
+            <view class="flex-column flex-main-end">十分火热</view>
+          </view>
+          <view class="flex-row flex-main-center flex-align-center game-playgame">开始</view>
+          <!-- <view class="game-startplay">
+            <image class="game-startplay-img" src="../../assets/icon/play.png" />
+          </view> -->
+        </view>
+        </view>
+        
       </view>
-      <view class='flex-row flex-main-center flex-align-center'>试玩</view>
+      <view class='game-content-hr'></view>
     </view>
-    <view class=''>more</view>
   </view>
+  <view class=''>more</view>
 </view>

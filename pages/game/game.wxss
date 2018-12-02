@@ -85,7 +85,8 @@ swiper {
   height: 140rpx;
   background-color: #e8e8e8;
 }
-.game-rank-first{
+
+.game-rank-first {
   border-radius: 20rpx;
   background-color: #e1ef0e;
   height: 40rpx;
@@ -93,16 +94,97 @@ swiper {
   font-size: 14px;
   color: #fff;
 }
-.game-rank{
+
+.game-rank {
   width: 12%;
 }
-.game-rank-image{
-  margin-right: 10rpx;
+
+.game-rank-image {
+  margin-right: 20rpx;
 }
-.game-image{
-  height: 120rpx;
-  width: 120rpx;
+
+.game-image {
+  height: 140rpx;
+  width: 140rpx;
 }
-.game-content-hr{
-  
+
+.game-content-item {
+  height: 180rpx;
+  font-family: Microsoft YaHei;
+}
+
+.game-content-hr {
+  height: 2rpx;
+  width: 90%;
+  background-color: #e2e2e2;
+  text-align: center;
+  margin-left: 5%;
+}
+
+.game-content-item-info {
+  width: 360rpx;
+  height:140rpx;
+}
+
+.game-content-item-title {
+  height: 40rpx;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.game-content-item-grade {
+  height: 48rpx;
+  font-size: 15px;
+  padding: 0 0 5rpx 0;
+}
+
+.game-content-item-taglist {
+  height: 46rpx;
+  margin-top: 6rpx;
+}
+
+.game-content-item-tag {
+  height: 40rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  border: 1px solid #dadada;
+  color: #585858;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #efefef;
+  margin-right: 12rpx;
+  padding: 2rpx 12rpx;
+}
+
+.star {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.game-play {
+  width: 180rpx;
+  height:140rpx;
+}
+
+.game-startplay-img {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 40rpx;
+  background-color: #5bc0de;
+  box-shadow: darkgrey 10rpx 10rpx 30rpx 5rpx;
+}
+
+.game-playgame {
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #5cb85c;
+  height: 56rpx;
+  width: 130rpx;
+  border-radius: 8rpx;
+}
+.game-ediertag{
+  font-size:22rpx;
+  /* color:#f4a90c; */
+  color:#f81d06;
+  padding: 2rpx 0;
 }

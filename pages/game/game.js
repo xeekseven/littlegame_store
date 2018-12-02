@@ -18,7 +18,11 @@ Page({
       { 'image': '../../assets/icon/fight.png', 'title': '解密' },
       { 'image': '../../assets/icon/fight.png', 'title': '人生' },
       { 'image': '../../assets/icon/fight.png', 'title': '哲理' },
-      { 'image': '../../assets/icon/fight.png', 'title': '无类别' }]
+      { 'image': '../../assets/icon/fight.png', 'title': '无类别' }],
+    gamelist: [
+      { 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
+      { 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }
+    ]
   },
 
   /**
