@@ -100,7 +100,7 @@ swiper {
 }
 
 .game-rank-image {
-  margin-right: 20rpx;
+  margin:0 20rpx 0 0;
 }
 
 .game-image {
@@ -163,7 +163,7 @@ swiper {
 
 .game-play {
   width: 180rpx;
-  height:140rpx;
+  height:144rpx;
 }
 
 .game-startplay-img {

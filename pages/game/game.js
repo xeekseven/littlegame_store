@@ -8,8 +8,8 @@ Page({
     search_key: 'rpg',
     background: ['lb1.jpg', 'lb2.jpg', 'lb3.jpg'],
     categoryrows1: [
-      { 'image': '../../assets/icon/rpg.png', 'title': 'rpg' },
-      { 'image': '../../assets/icon/rpg.png', 'title': '文字' },
+      { 'image': '../../assets/icon/rpg-dragon.png', 'title': 'rpg' },
+      { 'image': '../../assets/icon/sport.png', 'title': '文字' },
       { 'image': '../../assets/icon/rpg.png', 'title': '冒险' },
       { 'image': '../../assets/icon/rpg.png', 'title': 'morpg' },
       { 'image': '../../assets/icon/rpg.png', 'title': 'act' }],
