@@ -5,20 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    search_key: 'rpg',
+    search_key: '',
     background: ['lb1.jpg', 'lb2.jpg', 'lb3.jpg'],
     categoryrows1: [
       { 'image': '../../assets/icon/rpg-dragon.png', 'title': 'rpg' },
-      { 'image': '../../assets/icon/sport.png', 'title': '文字' },
-      { 'image': '../../assets/icon/rpg.png', 'title': '冒险' },
-      { 'image': '../../assets/icon/rpg.png', 'title': 'morpg' },
-      { 'image': '../../assets/icon/rpg.png', 'title': 'act' }],
+      { 'image': '../../assets/icon/manage.png', 'title': '经营' },
+      { 'image': '../../assets/icon/pagegame.png', 'title': '页游风' },
+      { 'image': '../../assets/icon/chicken.png', 'title': '经营' },
+      { 'image': '../../assets/icon/words.png', 'title': '文字' }
+      ],
     categoryrows2: [
-      { 'image': '../../assets/icon/fight.png', 'title': '动作' },
-      { 'image': '../../assets/icon/fight.png', 'title': '解密' },
-      { 'image': '../../assets/icon/fight.png', 'title': '人生' },
-      { 'image': '../../assets/icon/fight.png', 'title': '哲理' },
-      { 'image': '../../assets/icon/fight.png', 'title': '无类别' }],
+      { 'image': '../../assets/icon/puz.png', 'title': '益智'},
+      
+      { 'image': '../../assets/icon/airshot.png', 'title': '射击' },
+      { 'image': '../../assets/icon/sport.png', 'title': '运动' },
+      { 'image': '../../assets/icon/poker.png', 'title': '棋牌' },
+      { 'image': '../../assets/icon/unknown.png', 'title': '未知'}
+      ],
     gamelist: [
       { 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
       { 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }

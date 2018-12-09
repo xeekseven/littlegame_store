@@ -11,7 +11,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#1296db",
+    "selectedColor": "#f91b03",
     "list": [
       {
         "pagePath": "pages/game/game",
@@ -21,8 +21,8 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "iconPath": "assets/icon/person_1.png",
-        "selectedIconPath": "assets/icon/person_selected_1.png",
+        "iconPath": "assets/icon/person.png",
+        "selectedIconPath": "assets/icon/person_selected.png",
         "text": "个人"
       }
     ]

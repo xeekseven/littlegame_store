@@ -2,7 +2,7 @@
 @import "../../utils/flexcss.wxss";
 
 .game-header {
-  height: 350rpx;
+  /* height: 350rpx; */
   text-align: center;
 }
 
@@ -21,20 +21,40 @@
   width: 100rpx;
   height: 65rpx;
 }
-
-.game-search-input-right {
-  border-top-right-radius: 34rpx;
-  border-bottom-right-radius: 34rpx;
+.game-search-goto{
+  border-radius: 34rpx;
   background-color: #f8f8f8;
-  width: 530rpx;
-  height: 65rpx;
+  width: 630rpx;
+  height: 60rpx;
+  opacity:0.8;
+}
+.logo{
+  width:40rpx;
+  height: 40rpx;
+}
+.search-view{
+  margin:0rpx 10rpx 0 30rpx;
+  height:40rpx;
+}
+.search-logo{
+  width:40rpx;
+  height: 40rpx;
+}
+.search-text-key{
+  color: #8a8a8a;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+}
+.search-text-line{
+  height:30rpx;
+  width:4rpx;
+  background:#8a8a8a;
+  margin:0 10rpx 0 0;
+  border-radius:4rpx;
+  opacity:0.8;
 }
 
-.game-search-input-right:hover {
-  border: 1px solid #1296db;
-}
-
-swiper {
+.swiper {
   height: 350rpx;
 }
 
@@ -66,15 +86,14 @@ swiper {
 }
 
 .categoru-item-wall {
-  padding: 16rpx;
-  height: 45rpx;
-  border-radius: 45rpx;
-  border: 1px solid #000;
+  /* padding: 16rpx; *//* height: 45rpx; */
+  border-radius: 64rpx;
+  /* border: 1px solid #000; */
 }
 
 .category-item-icon {
-  height: 45rpx;
-  width: 45rpx;
+  height: 64rpx;
+  width: 64rpx;
 }
 
 .category-item-title {
@@ -82,16 +101,42 @@ swiper {
 }
 
 .game-now {
-  height: 140rpx;
-  background-color: #e8e8e8;
+  height: 80rpx;
+  /* background-color: #e8e8e8; */
+  border-top: 1px solid #b4b3b5;
+  border-bottom: 1px solid #b4b3b5;
+  padding:0 5%;
+
 }
 
+.game-now-item {
+  width: 25%;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-size: 30rpx;
+}
+.triangle-up{
+  margin:0 10rpx;
+  width:0;
+  height:14rpx;
+  border-left:10rpx solid transparent;
+  border-right:10rpx solid transparent;
+  border-bottom:14rpx solid red;
+}
+.triangle-down{
+  margin:20rpx 10rpx 0 10rpx;
+  width:0;
+  height:14rpx;
+  border-left:10rpx solid transparent;
+  border-right:10rpx solid transparent;
+  border-top:14rpx solid red;
+}
 .game-rank-first {
   border-radius: 20rpx;
   background-color: #e1ef0e;
   height: 40rpx;
   width: 40rpx;
-  font-size: 14px;
+  font-size: 26rpx;
   color: #fff;
 }
 
@@ -100,7 +145,7 @@ swiper {
 }
 
 .game-rank-image {
-  margin:0 20rpx 0 0;
+  margin: 0 20rpx 0 0;
 }
 
 .game-image {
@@ -123,7 +168,7 @@ swiper {
 
 .game-content-item-info {
   width: 360rpx;
-  height:140rpx;
+  height: 140rpx;
 }
 
 .game-content-item-title {
@@ -163,7 +208,7 @@ swiper {
 
 .game-play {
   width: 180rpx;
-  height:144rpx;
+  height: 144rpx;
 }
 
 .game-startplay-img {
@@ -182,9 +227,10 @@ swiper {
   width: 130rpx;
   border-radius: 8rpx;
 }
-.game-ediertag{
-  font-size:22rpx;
+
+.game-ediertag {
+  font-size: 22rpx;
   /* color:#f4a90c; */
-  color:#f81d06;
+  color: #f81d06;
   padding: 2rpx 0;
 }

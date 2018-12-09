@@ -1,10 +1,17 @@
 <!-- pages/game/game.wxml -->
 <view class='flex-column flex-main-start'>
   <view class='game-header'>
-    <view class='flex-row flex-main-center game-search'>
-      <view class='game-search-input-left'>xd</view>
-      <view class='game-search-input'>
-        <input class='game-search-input-right' type='text' value='{{search_key}}'></input>
+    <view class='flex-row flex-main-center flex-align-center game-search'>
+      <!--<view class='game-search-input-left'>xd</view>-->
+      <view class="flex-row flex-main-start flex-align-center game-search-goto">
+        
+        <view class="search-view">
+          <image class="search-logo" src="../../assets/icon/search.png"/>
+        </view>
+        <view class="flex-row flex-main-start flex-align-center search-text">
+          <view class="search-text-line"></view>
+          <view class="search-text-key">独立游戏</view>
+        </view>
       </view>
     </view>
     <view class='game-pollimg'>
@@ -25,32 +32,47 @@
             <image class='category-item-icon' src="{{item.image}}"></image>
           </view>
         </view>
-        <view class='flex-row flex-main-center flex-align-center category-item-title'>
-          {{item.title}}
-        </view>
+        <view class='flex-row flex-main-center flex-align-center category-item-title'>{{item.title}}</view>
       </view>
     </view>
-    <view class='flex-row flex-start game-category-row'>
+    <view class='flex-row flex-start game-category-row' style="margin-top:8rpx">
       <view wx:for="{{categoryrows2}}" class='flex-column flex-main-start category-item'>
         <view class='flex-row flex-main-center flex-align-center'>
           <view class='categoru-item-wall'>
             <image class='category-item-icon' src="{{item.image}}"></image>
           </view>
         </view>
-        <view class='flex-row flex-main-center flex-align-center category-item-title'>
-          {{item.title}}
-        </view>
+        <view class='flex-row flex-main-center flex-align-center category-item-title'>{{item.title}}</view>
       </view>
     </view>
   </view>
-  <view class="flex-row flex-main-center flex-align-center game-now">此刻最HOT</view>
+  <view class="flex-row flex-main-center flex-align-center game-now">
+    <view class="flex-row flex-main-center game-now-item">
+    综合
+    <view class="triangle-up">
+    </view>
+    </view>
+    <view class="flex-row flex-main-center game-now-item">
+    热度
+    <view class="triangle-up">
+    </view>
+    </view>
+    <view class="flex-row flex-main-center game-now-item">
+    评价
+    <view class="triangle-up">
+    </view>
+    </view>
+    <view class="flex-row flex-main-center game-now-item">
+    男向
+    <view class="triangle-down">
+    </view>
+    </view>
+  </view>
   <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
     <view class='flex-column flex-main-between'>
       <view class="flex-row flex-main-start game-content-item">
         <view class='flex-row flex-main-center flex-align-center game-rank'>
-          <view class='flex-row flex-main-center flex-align-center game-rank-first'>
-            {{item.rank}}
-          </view>
+          <view class='flex-row flex-main-center flex-align-center game-rank-first'>{{item.rank}}</view>
         </view>
         <view class='flex-row flex-main-between'>
           <view class='flex-row flex-main-center flex-align-center game-rank-image'>
