@@ -124,7 +124,7 @@
   border-bottom:14rpx solid red;
 }
 .triangle-down{
-  margin:20rpx 10rpx 0 10rpx;
+  margin:0rpx 10rpx 0 10rpx;
   width:0;
   height:14rpx;
   border-left:10rpx solid transparent;

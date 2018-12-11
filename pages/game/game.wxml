@@ -2,11 +2,10 @@
 <view class='flex-column flex-main-start'>
   <view class='game-header'>
     <view class='flex-row flex-main-center flex-align-center game-search'>
-      <!--<view class='game-search-input-left'>xd</view>-->
+      <!-- <view class='game-search-input-left'>xd</view> -->
       <view class="flex-row flex-main-start flex-align-center game-search-goto">
-        
         <view class="search-view">
-          <image class="search-logo" src="../../assets/icon/search.png"/>
+          <image class="search-logo" src="../../assets/icon/search.png" />
         </view>
         <view class="flex-row flex-main-start flex-align-center search-text">
           <view class="search-text-line"></view>
@@ -32,7 +31,9 @@
             <image class='category-item-icon' src="{{item.image}}"></image>
           </view>
         </view>
-        <view class='flex-row flex-main-center flex-align-center category-item-title'>{{item.title}}</view>
+        <view class='flex-row flex-main-center flex-align-center category-item-title'>
+          {{item.title}}
+        </view>
       </view>
     </view>
     <view class='flex-row flex-start game-category-row' style="margin-top:8rpx">
@@ -42,37 +43,37 @@
             <image class='category-item-icon' src="{{item.image}}"></image>
           </view>
         </view>
-        <view class='flex-row flex-main-center flex-align-center category-item-title'>{{item.title}}</view>
+        <view class='flex-row flex-main-center flex-align-center category-item-title'>
+          {{item.title}}
+        </view>
       </view>
     </view>
   </view>
   <view class="flex-row flex-main-center flex-align-center game-now">
-    <view class="flex-row flex-main-center game-now-item">
-    综合
-    <view class="triangle-up">
+    <view class="flex-row flex-main-center game-now-item" data-index="1" bind:tap="changeFilterClass">
+      综合
+      <view wx:if="{{filterClass.index == 1}}" class="{{filterClass.class_name}}"></view>
     </view>
+    <view class="flex-row flex-main-center game-now-item" data-index="2" bind:tap="changeFilterClass">
+      热度
+      <view wx:if="{{filterClass.index == 2}}" class="{{filterClass.class_name}}"></view>
     </view>
-    <view class="flex-row flex-main-center game-now-item">
-    热度
-    <view class="triangle-up">
+    <view class="flex-row flex-main-center game-now-item" data-index="3" bind:tap="changeFilterClass">
+      评价
+      <view wx:if="{{filterClass.index == 3}}" class="{{filterClass.class_name}}"></view>
     </view>
-    </view>
-    <view class="flex-row flex-main-center game-now-item">
-    评价
-    <view class="triangle-up">
-    </view>
-    </view>
-    <view class="flex-row flex-main-center game-now-item">
-    男向
-    <view class="triangle-down">
-    </view>
+    <view class="flex-row flex-main-center game-now-item" data-index="4" bind:tap="changeFilterClass">
+      男向
+      <view wx:if="{{filterClass.index == 4}}" class="{{filterClass.class_name}}"></view>
     </view>
   </view>
   <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
     <view class='flex-column flex-main-between'>
       <view class="flex-row flex-main-start game-content-item">
         <view class='flex-row flex-main-center flex-align-center game-rank'>
-          <view class='flex-row flex-main-center flex-align-center game-rank-first'>{{item.rank}}</view>
+          <view class='flex-row flex-main-center flex-align-center game-rank-first'>
+            {{item.rank}}
+          </view>
         </view>
         <view class='flex-row flex-main-between'>
           <view class='flex-row flex-main-center flex-align-center game-rank-image'>
@@ -96,17 +97,16 @@
         </view>
         <view class="flex-row flex-main-center flex-align-center">
           <view class='flex-column flex-main-between flex-align-center game-play'>
-          <view class="flex-row flex-main-start flex-align-center game-ediertag">
-            <image style="height:32rpx;width:32rpx;margin-right:8rpx" src="../../assets/icon/hot16.png" />
-            <view class="flex-column flex-main-end">十分火热</view>
-          </view>
-          <view class="flex-row flex-main-center flex-align-center game-playgame">开始</view>
-          <!-- <view class="game-startplay">
+            <view class="flex-row flex-main-start flex-align-center game-ediertag">
+              <image style="height:32rpx;width:32rpx;margin-right:8rpx" src="../../assets/icon/hot16.png" />
+              <view class="flex-column flex-main-end">十分火热</view>
+            </view>
+            <view class="flex-row flex-main-center flex-align-center game-playgame">开始</view>
+            <!-- <view class="game-startplay">
             <image class="game-startplay-img" src="../../assets/icon/play.png" />
           </view> -->
+          </view>
         </view>
-        </view>
-        
       </view>
       <view class='game-content-hr'></view>
     </view>

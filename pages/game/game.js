@@ -20,14 +20,45 @@ Page({
       { 'image': '../../assets/icon/airshot.png', 'title': '射击' },
       { 'image': '../../assets/icon/sport.png', 'title': '运动' },
       { 'image': '../../assets/icon/poker.png', 'title': '棋牌' },
-      { 'image': '../../assets/icon/unknown.png', 'title': '未知'}
+      { 'image': '../../assets/icon/unknown.png', 'title': '独立'}
       ],
     gamelist: [
       { 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
       { 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }
-    ]
+    ],
+    filterClass:{
+      index:1,
+      class_name:'triangle-up'
+    }
   },
-
+  changeFilterClass:function(event){
+    console.log(event)
+    if(this.data.filterClass.index!=event.currentTarget.dataset.index){
+      this.setData({
+        filterClass:{
+          index:parseInt(event.currentTarget.dataset.index),
+          class_name:'triangle-down'
+        }
+      })
+    }else{
+      if(this.data.filterClass.class_name == 'triangle-up'){
+        this.setData({
+          filterClass:{
+            index:parseInt(event.currentTarget.dataset.index),
+            class_name:'triangle-down'
+          }
+        })
+      }else{
+        this.setData({
+          filterClass:{
+            index:parseInt(event.currentTarget.dataset.index),
+            class_name:'triangle-up'
+          }
+        })
+      }
+    }
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
