@@ -118,7 +118,7 @@
 .triangle-up{
   margin:0 10rpx;
   width:0;
-  height:14rpx;
+  height:0rpx;
   border-left:10rpx solid transparent;
   border-right:10rpx solid transparent;
   border-bottom:14rpx solid red;
@@ -126,7 +126,7 @@
 .triangle-down{
   margin:0rpx 10rpx 0 10rpx;
   width:0;
-  height:14rpx;
+  height:0rpx;
   border-left:10rpx solid transparent;
   border-right:10rpx solid transparent;
   border-top:14rpx solid red;
@@ -233,4 +233,12 @@
   /* color:#f4a90c; */
   color: #f81d06;
   padding: 2rpx 0;
+}
+
+.page-bottom{
+  font-family: Microsoft YaHei;
+  text-align:center;
+  color: #b4b3b5;
+  font-size: 32rpx;
+  margin:14rpx;
 }

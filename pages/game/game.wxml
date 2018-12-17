@@ -50,19 +50,19 @@
     </view>
   </view>
   <view class="flex-row flex-main-center flex-align-center game-now">
-    <view class="flex-row flex-main-center game-now-item" data-index="1" bind:tap="changeFilterClass">
+    <view class="flex-row flex-main-center flex-align-center game-now-item" data-index="1" bind:tap="changeFilterClass">
       综合
       <view wx:if="{{filterClass.index == 1}}" class="{{filterClass.class_name}}"></view>
     </view>
-    <view class="flex-row flex-main-center game-now-item" data-index="2" bind:tap="changeFilterClass">
+    <view class="flex-row flex-main-center flex-align-center game-now-item" data-index="2" bind:tap="changeFilterClass">
       热度
       <view wx:if="{{filterClass.index == 2}}" class="{{filterClass.class_name}}"></view>
     </view>
-    <view class="flex-row flex-main-center game-now-item" data-index="3" bind:tap="changeFilterClass">
+    <view class="flex-row flex-main-center flex-align-center game-now-item" data-index="3" bind:tap="changeFilterClass">
       评价
       <view wx:if="{{filterClass.index == 3}}" class="{{filterClass.class_name}}"></view>
     </view>
-    <view class="flex-row flex-main-center game-now-item" data-index="4" bind:tap="changeFilterClass">
+    <view class="flex-row flex-main-center flex-align-center game-now-item" data-index="4" bind:tap="changeFilterClass">
       男向
       <view wx:if="{{filterClass.index == 4}}" class="{{filterClass.class_name}}"></view>
     </view>
@@ -111,5 +111,5 @@
       <view class='game-content-hr'></view>
     </view>
   </view>
-  <view class=''>more</view>
+  <view class='page-bottom'>=== 已经到底了 ===</view>
 </view>
