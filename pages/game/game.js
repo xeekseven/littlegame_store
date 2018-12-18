@@ -1,4 +1,5 @@
 // pages/game/game.js
+var gameService = require('../../services/game.service.js')
 Page({
 
   /**
@@ -58,6 +59,15 @@ Page({
       }
     }
     
+  },
+  GetGames:function(event){
+    let key = event.currentTarget.dataset.key;
+    let result = gameService.GetGames(key,1,1);
+    //let thisGames = this.data.gamelist;
+    //let gameRes = thisGames.concat(result)
+    this.setData({
+      gamelist:result
+    })
   },
   /**
    * 生命周期函数--监听页面加载

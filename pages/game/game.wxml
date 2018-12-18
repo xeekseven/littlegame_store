@@ -27,7 +27,7 @@
     <view class='flex-row flex-start game-category-row' style="margin-top:30rpx">
       <view wx:for="{{categoryrows1}}" class='flex-column flex-main-start category-item'>
         <view class='flex-row flex-main-center flex-align-center'>
-          <view class='categoru-item-wall'>
+          <view class='categoru-item-wall' data-key="{{item.title}}" bind:tap="GetGames">
             <image class='category-item-icon' src="{{item.image}}"></image>
           </view>
         </view>
