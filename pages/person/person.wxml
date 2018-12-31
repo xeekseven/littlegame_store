@@ -1,0 +1,49 @@
+<!-- pages/person/person.wxml -->
+<view class="flex flex-column">
+  <view class="flex flex-row flex-main-center header-container">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        获取头像昵称
+      </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="flex flex-row flex-main-center meau-container">
+    <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{menu_foot_class_name}}">
+      <view>足迹</view>
+    </view>
+    <view bind:tap="changeActive"  class="flex flex-row flex-main-center flex-align-center menu {{menu_like_class_name}}">
+      <view>喜欢</view>
+    </view>
+  </view>
+  <view class="flex flex-column flex-main-start">
+    <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
+    <view class='flex-column flex-main-between'>
+      <view class="flex-row flex-main-start game-content-item">
+        <view class='flex-row flex-main-between'>
+          <view class='flex-row flex-main-center flex-align-center game-image-container'>
+            <image class='game-image' src='{{item.image_path}}' />
+          </view>
+          <view class='flex-row flex-main-center flex-align-center'>
+            <view class='flex-column flex-main-center game-content-item-info'>
+              <view class="game-content-item-title">{{item.title}}</view>
+              <view class="flex-row flex-main-start flex-align-center game-content-item-grade">
+                <image class="star" src="../../assets/icon/w_star.png" />
+                <image class="star" src="../../assets/icon/h_star.png" />
+                {{item.grade}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="flex-row flex-main-center flex-align-center" style="width:100%">
+          <image class="{{symbol_image_name}}" src="../../assets/icon/{{symbol_name}}.svg" />
+        </view>
+      </view>
+      <view class='game-content-hr'></view>
+    </view>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,103 @@
+/* pages/person/person.wxss */
+@import "../../utils/flexcss.wxss";
+
+.game-symbol {
+  width: 25%;
+  margin: 2%;
+}
+.header-container{
+    padding:80rpx;
+    background-color:#1296db;
+}
+.meau-container{
+
+}
+.menu{
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    font-size: 34rpx;
+}
+.menu-symbol{
+    width: 50%;
+    height: 70rpx;
+}
+.menu-symbol-active{
+    width:50%;
+    height:70rpx;
+    color: #f91b03;
+    border-bottom:6rpx solid #f91b03;
+}
+.menu-symbol-image{
+    width: 128rpx;
+    height: 128rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.game-image-container{
+  margin:0 40rpx;
+}
+.game-image {
+  height: 140rpx;
+  width: 140rpx;
+}
+
+.game-content-item {
+  height: 180rpx;
+  font-family: Microsoft YaHei;
+}
+
+.game-content-hr {
+  height: 2rpx;
+  width: 90%;
+  background-color: #e2e2e2;
+  text-align: center;
+  margin-left: 5%;
+}
+
+.game-content-item-info {
+  width: 360rpx;
+  height: 140rpx;
+}
+
+.game-content-item-title {
+  height: 40rpx;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+.game-content-item-grade {
+  height: 48rpx;
+  font-size: 15px;
+  padding: 0 0 5rpx 0;
+}
+.star {
+  height: 40rpx;
+  width: 40rpx;
+}
+.footprint-image{
+  height:100rpx;
+  width: 100rpx;
+}
+.like-image{
+  height:80rpx;
+  width: 80rpx;
+}

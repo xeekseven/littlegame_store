@@ -2,7 +2,10 @@
   "pages": [
     "pages/game/game",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/person/person",
+    "pages/details/details"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +23,7 @@
         "text": "游戏"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/person/person",
         "iconPath": "assets/icon/person.png",
         "selectedIconPath": "assets/icon/person_selected.png",
         "text": "个人"
