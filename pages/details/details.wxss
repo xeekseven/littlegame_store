@@ -1,1 +1,24 @@
 /* pages/details/details.wxss */
+@import "../../utils/flexcss.wxss";
+
+.game-content-item-taglist {
+    height: 46rpx;
+    margin-top: 6rpx;
+  }
+  
+.game-content-item-tag {
+    height: 40rpx;
+    font-size: 24rpx;
+    box-sizing: border-box;
+    border: 1px solid #dadada;
+    color: #585858;
+    text-align: center;
+    border-radius: 10rpx;
+    background-color: #efefef;
+    margin-right: 12rpx;
+    padding: 2rpx 12rpx;
+  }
+  .game-operation{
+    position: absolute;
+    bottom: 0;
+  }

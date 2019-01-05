@@ -1,5 +1,7 @@
 // pages/game/game.js
-var gameService = require('../../services/game.service.js')
+var gameService = require('../../services/game.service.js');
+var util = require('../../utils/util.js');
+
 Page({
 
   /**
@@ -24,8 +26,8 @@ Page({
       { 'image': '../../assets/icon/unknown.png', 'title': '独立'}
       ],
     gamelist: [
-      { 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
-      { 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }
+      { id:'aefa1-123', 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
+      { id:'1fafa-112', 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }
     ],
     filterClass:{
       index:1,
@@ -67,6 +69,20 @@ Page({
     //let gameRes = thisGames.concat(result)
     this.setData({
       gamelist:result
+    })
+  },
+  gotoSearchPage:function(event){
+    wx.navigateTo({
+      url:'../search/search'
+    })
+  },
+  getGameDetail:function(event){
+    let vdata = util.GetEventData(event);
+    console.log(vdata)
+    let detailUrl = '../details/details?gameId='+vdata.id
+    console.log(detailUrl)
+    wx.navigateTo({
+      url:detailUrl
     })
   },
   /**

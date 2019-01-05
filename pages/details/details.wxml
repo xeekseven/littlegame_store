@@ -1,2 +1,38 @@
-<!--pages/details/details.wxml-->
-<text>pages/details/details.wxml</text>
+<!-- pages/details/details.wxml -->
+<view class="flex-column flex-main-start" style="height:100%">
+    <view class="flex-column flex-main-start">
+        <view class="flex-row flex-main-start flex-align-center">
+            <view class="game-logo">
+                <image style="height:64rpx;width:64rpx;" src="../../assets/img/logo.png" />
+            </view>
+            <view class="flex-column flex-main-start">
+                <view wx:for="{{game_details}}" class="flex-row flex-main-start">
+                    <view class="detail-item-title">{{item.key}}</view>
+                    <view class="detail-item-value">{{item.value}}</view>
+                </view>
+            </view>
+            <view>3.1</view>
+        </view>
+        <view class="flex-row flex-main-start flex-align-end game-content-item-taglist">
+            <view wx:for="{{game_tags}}" wx:for-item="tagitem" wx:for-index="tagindex" class="flex-row flex-main-center flex-align-center game-content-item-tag">
+                {{tagitem}}
+            </view>
+        </view>
+    </view>
+    <view class="flex-column flex-main-start">
+        <view class="flex-row flex-main-center">
+            <view class="selector">简介</view>
+            <view class="selector">评论</view>
+        </view>
+        <view wx:if="{{selector == 'intro'}}" class="selector-intro">简介啥的</view>
+        <view wx:if="{{selector == 'comments'}}" class="flex-column flex-main-start selector-comments">
+            <view class="game-grade"></view>
+            <view class="game-your-grade"></view>
+            <view class="game-user-comments"></view>
+        </view>
+    </view>
+</view>
+<view class="flex-row flex-between game-operation">
+    <view>分享</view>
+    <view>把玩</view>
+</view>

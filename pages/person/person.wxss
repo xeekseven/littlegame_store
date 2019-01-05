@@ -6,8 +6,8 @@
   margin: 2%;
 }
 .header-container{
-    padding:80rpx;
-    background-color:#1296db;
+    height:400rpx;
+    background-color: #ed4a57;
 }
 .meau-container{
 
@@ -42,10 +42,11 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+  border:2px solid #fff;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #fff;
 }
 
 .usermotto {
@@ -100,4 +101,9 @@
 .like-image{
   height:80rpx;
   width: 80rpx;
+}
+.notice-container{
+  position: absolute;
+  right: 3%;
+  margin: 3% 0 0 0;
 }

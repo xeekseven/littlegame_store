@@ -1,2 +1,36 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<!-- pages/search/search.wxml -->
+<view class='flex-column flex-main-start'>
+  <view class='flex-column'>
+    <view class='search-input'>
+      <input class="search" placeholder="搜索" confirm-type="search" />
+    </view>
+    <view class='flex-column flex-main-start'>
+      <view wx:for="{{history_list}}" class="flex-row flex-main-between flex-align-center search-history">
+        <view class="flex-row flex-row-start flex-align-center search-history-item">
+          <image style="height:64rpx;width:64rpx" src="../../assets/icon/search-record.svg" />
+          <view class="flex-row flex-align-center search-history-item-title">{{item.title}}</view>
+        </view>
+        <view class="flex-row flex-main-center flex-align-center delete-container">
+          <image class="search-delete" src="../../assets/icon/delete.svg" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='flex-column rank-nowtime'>
+    <view class="flex-row flex-main-start flex-align-center rank-title">实时搜索</view>
+    <view class='flex-row flex-main-between' style="padding:0 20rpx">
+      <view class='flex-column flex-main-start' style="padding:10rpx 0">
+        <view wx:for="{{rank_list}}" wx:if="{{item.level % 2 ==1}}" class='flex-row flex-main-start rank-item'>
+          <view class="rank-item-level">{{item.level}}</view>
+          <view class="flex-row flex-align-center rank-item-title">{{item.title}}</view>
+        </view>
+      </view>
+      <view class='flex-column flex-main-start'>
+        <view wx:for="{{rank_list}}" wx:if="{{item.level % 2 ==0}}"  class='flex-row flex-main-start rank-item'>
+          <view class="rank-item-level">{{item.level}}</view>
+          <view class="flex-row flex-align-center rank-item-title">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

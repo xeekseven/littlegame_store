@@ -64,6 +64,11 @@ Page({
       })
     }
   },
+  navigateToSetting:function(event) {
+    wx.navigateTo({
+      url: '../setting/setting'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

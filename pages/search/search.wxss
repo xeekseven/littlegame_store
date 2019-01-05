@@ -1,1 +1,62 @@
 /* pages/search/search.wxss */
+@import "../../utils/flexcss.wxss";
+
+.search{
+    background-color:#fff;
+    border-radius:16rpx;
+    border: 1px solid #c7c7c7;
+    font-family: Microsoft YaHei;
+    font-size: 32rpx;
+    height: 50rpx;
+    padding: 12rpx 20rpx;
+}
+.search-input{
+    background-color:#f1f1f1;
+    padding:5px;
+    
+}
+.search-history{
+    border: 1px solid #f1f1f1;
+}
+.search-history-item{
+    height: 100rpx;
+    margin:0 20rpx;
+}
+.search-history-item-title{
+    margin:0 0 0 10rpx;
+    font-family: Microsoft YaHei;
+    font-size: 32rpx;
+}
+.delete-container{
+    margin: 30rpx 40rpx;
+}
+.search-delete{
+    height: 22rpx;
+    width: 22rpx;
+}
+
+.rank-title{
+    padding:20rpx;
+    font-family:Microsoft YaHei;
+    font-weight: bold;
+    color: #000;
+    font-size: 32rpx;
+}
+.rank-item{
+    font-family:Microsoft YaHei;
+    margin:10rpx 0;
+}
+.rank-item-level{
+    color:#ff5026;
+    font-family:Microsoft YaHei;
+    margin:0 20rpx 0 10rpx;
+}
+.rank-item-title{
+    font-family:Microsoft YaHei;
+    font-size: 30rpx;
+
+}
+.rank-nowtime{
+    border-top: 2px solid #f1f1f1;
+    border-bottom: 3px solid #f1f1f1;
+}

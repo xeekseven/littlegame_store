@@ -3,7 +3,7 @@
   <view class='game-header'>
     <view class='flex-row flex-main-center flex-align-center game-search'>
       <!-- <view class='game-search-input-left'>xd</view> -->
-      <view class="flex-row flex-main-start flex-align-center game-search-goto">
+      <view class="flex-row flex-main-start flex-align-center game-search-goto" bind:tap="gotoSearchPage">
         <view class="search-view">
           <image class="search-logo" src="../../assets/icon/search.png" />
         </view>
@@ -69,7 +69,7 @@
   </view>
   <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
     <view class='flex-column flex-main-between'>
-      <view class="flex-row flex-main-start game-content-item">
+      <view bind:tap="getGameDetail" data-id="{{item.id}}" class="flex-row flex-main-start game-content-item">
         <view class='flex-row flex-main-center flex-align-center game-rank'>
           <view class='flex-row flex-main-center flex-align-center game-rank-first'>
             {{item.rank}}

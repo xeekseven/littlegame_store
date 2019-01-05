@@ -13,7 +13,7 @@ const GetData = (key) => {
 const GetFootprintGames = (userId,pageIndex, pageSize) => {
     //let url = config.get_footprint_game_records_url + "/${categoryKey}/${pageIndex}/${pageSize}";
     // let result = httphelper.httpget(url);
-    let result = GetData('footprint')
+    let result = GetData('footprint');
     return result;
 }
 const GetLikeGames = (userId,pageIndex, pageSize) => {

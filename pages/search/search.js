@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    history_list:[
+      { "game_id":"falflak1212faff1" ,"title":"天剑七侠传"},
+      { "game_id":"falflak1212faffe1" ,"title":"人类一败涂地"}
+    ],
+    rank_list:[
+      { "level":1,"title":"天剑1侠传" },
+      { "level":2,"title":"天剑2侠传" },
+      { "level":3,"title":"天剑3侠传" },
+      { "level":4,"title":"天剑4侠传" },
+      { "level":5,"title":"天剑5侠传" },
+      { "level":6,"title":"天剑6侠传" },
+      { "level":7,"title":"天剑7侠传" },
+      { "level":8,"title":"天剑8侠传" },
+      { "level":9,"title":"天剑9侠传" },
+      { "level":10,"title":"天剑afdaaf10侠传" }
+    ]
   },
 
   /**

@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/search/search",
     "pages/person/person",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

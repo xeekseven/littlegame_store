@@ -1,25 +1,20 @@
-// pages/details/details.js
+// pages/setting/setting.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    game_details:[
-      { 'key':'厂商','value':'鼓楼工作室'},
-      { 'key':'更新日期','value':'2019-04-21'},
-      { 'key':'平均加载时长','value':'2s'},
-      { 'key':'游玩关注人数','value':'12131' }
-    ],
-    game_tags:['射击', '人生', '哲理', '战争'],
-    selector:'intro'
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.gameId)
+    setTimeout(e=>{
+      wx.navigateBack()
+    },1000)
   },
 
   /**

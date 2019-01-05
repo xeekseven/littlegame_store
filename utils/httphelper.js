@@ -1,30 +1,41 @@
 
-const HttpGet = (url)=>{
-    return fetch(url)
-    .then(r=>r.json())
-    .catch(e=>console.log('ex',e))
+const HttpGet = url => {
+    return new Promise((resolve, reject) => {
+        wx.request({
+            url,
+            method: 'GET',
+            header: {
+                "content-type": "application/json"
+            },
+            success(res) {
+                resolve(res)
+            },
+            fail(err) {
+                reject(err)
+            }
+        })
+    })
 }
 
-const HttpPost = (url,data) =>{
-    let config = {
-        method:'POST',
-        mode:'no-cors',
-        credentials:'include',
-        headers:{
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body:data
-    }
-    return HttpPostConfig(url,config)
-}
-
-const HttpPostConfig = (url,config)=>{
-    return fetch(url,config)
-    .then(r=> r.json())
-    .catch(e=> console.log('Post ex',e))
+const HttpPost = (url,data)=>{
+    return new Promise((resolve, reject) => {
+        wx.request({
+            url,
+            method: 'post',
+            header: {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            success(res) {
+                resolve(res)
+            },
+            fail(err) {
+                reject(err)
+            }
+        })
+    })
 }
 
 module.exports = {
-    httpget:HttpGet,
-    httppost:HttpPost
+    httpget: HttpGet,
+    httppost: HttpPost
 }
