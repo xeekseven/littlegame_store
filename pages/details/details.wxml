@@ -1,17 +1,21 @@
 <!-- pages/details/details.wxml -->
-<view class="flex-column flex-main-start" style="height:100%">
+<view class="flex-column flex-main-start" style="height:1000px">
     <view class="flex-column flex-main-start">
-        <view class="flex-row flex-main-start flex-align-center">
-            <view class="game-logo">
-                <image style="height:64rpx;width:64rpx;" src="../../assets/img/logo.png" />
+        <view class="flex-row flex-main-start flex-align-start">
+            <view class="flex-row flex-main-center flex-align-start game-logo">
+                <image style="height:140rpx;width:140rpx;" src="../../assets/img/logo.jpg" />
             </view>
-            <view class="flex-column flex-main-start">
-                <view wx:for="{{game_details}}" class="flex-row flex-main-start">
-                    <view class="detail-item-title">{{item.key}}</view>
+            <view class="flex-column flex-main-start game-detail-content">
+                <view class="game-title">{{game_title}}</view>
+                <view wx:for="{{game_details}}" class="flex-row flex-main-start game-detail-item">
+                    <view class="detail-item-title">{{item.key}}：</view>
                     <view class="detail-item-value">{{item.value}}</view>
                 </view>
             </view>
-            <view>3.1</view>
+            <view class="flex-row flex-main-center flex-align-center">
+                <!-- <image class="game-grade-image" src="../../assets/icon/grade-background.svg" /> -->
+                <view class="game-grade">3.2</view>
+            </view>
         </view>
         <view class="flex-row flex-main-start flex-align-end game-content-item-taglist">
             <view wx:for="{{game_tags}}" wx:for-item="tagitem" wx:for-index="tagindex" class="flex-row flex-main-center flex-align-center game-content-item-tag">
@@ -19,12 +23,22 @@
             </view>
         </view>
     </view>
-    <view class="flex-column flex-main-start">
-        <view class="flex-row flex-main-center">
-            <view class="selector">简介</view>
-            <view class="selector">评论</view>
+    <view class="flex-column flex-main-start" >
+        <view class="flex-row flex-main-center" style="box-shadow:0px 1px 1px #c7c7c7;">
+            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{menu_intro_class_name}}">
+                <view>详情</view>
+            </view>
+            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{menu_comments_class_name}}">
+                <view>评论</view>
+            </view>
         </view>
-        <view wx:if="{{selector == 'intro'}}" class="selector-intro">简介啥的</view>
+        <view wx:if="{{selector == 'intro'}}" class="flex-column flex-main-center flex-align-start selector-intro">
+            <view class="flex-row flex-main-start flex-align-center intro-title">简介</view>
+            <view class='content-hr'></view>
+            <view class="intro-content" >
+                <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{intro_content}}
+            </view>
+        </view>
         <view wx:if="{{selector == 'comments'}}" class="flex-column flex-main-start selector-comments">
             <view class="game-grade"></view>
             <view class="game-your-grade"></view>
@@ -32,7 +46,22 @@
         </view>
     </view>
 </view>
-<view class="flex-row flex-between game-operation">
-    <view>分享</view>
-    <view>把玩</view>
+<view class="flex-row flex-main-between flex-align-center game-operation">
+    <view class="flex-row flex-main-center flex-align-center">
+        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
+            <image src="../../assets/icon/home.svg" class="image-size" style="margin:10rpx 10rpx 20rpx 30rpx" />
+            主页
+        </view>
+    </view>
+    <view class="flex-row flex-main-center flex-align-center">
+        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
+            <image src="../../assets/icon/like.svg" class="image-size" />
+            喜欢
+        </view>
+        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
+            <image src="../../assets/icon/share.svg" class="image-size" />
+            分享
+        </view>
+        <view class="flex-row flex-main-center flex-align-center bottom-bar-play">游玩</view>
+    </view>
 </view>

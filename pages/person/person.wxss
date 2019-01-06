@@ -24,6 +24,7 @@
 .menu-symbol-active{
     width:50%;
     height:70rpx;
+    /* color: #f91b03; */
     color: #f91b03;
     border-bottom:6rpx solid #f91b03;
 }
