@@ -1,0 +1,24 @@
+/* components/userinfo/userinfo.wxss */
+@import "../../utils/flexcss.wxss";
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    border:2px solid #fff;
+  }
+  
+  .userinfo-nickname {
+    color: #fff;
+  }
+  
+  .usermotto {
+    margin-top: 200px;
+  }

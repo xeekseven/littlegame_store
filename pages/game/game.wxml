@@ -67,7 +67,7 @@
       <view wx:if="{{filterClass.index == 4}}" class="{{filterClass.class_name}}"></view>
     </view>
   </view>
-  <view wx:for='{{gamelist}}' class='flex-column flex-main-start game-content'>
+  <view wx:for='{{gamelist}}' wx:key="id" class='flex-column flex-main-start game-content'>
     <view class='flex-column flex-main-between'>
       <view bind:tap="getGameDetail" data-id="{{item.id}}" class="flex-row flex-main-start game-content-item">
         <view class='flex-row flex-main-center flex-align-center game-rank'>
@@ -75,13 +75,25 @@
             {{item.rank}}
           </view>
         </view>
-        <view class='flex-row flex-main-between'>
+        <view class='flex-row flex-main-start' style="width:100%">
           <view class='flex-row flex-main-center flex-align-center game-rank-image'>
             <image class='game-image' src='{{item.image_path}}' />
           </view>
-          <view class='flex-row flex-main-center flex-align-center'>
+          <view class='flex-row flex-main-center flex-align-center' style="width:100%">
             <view class='flex-column flex-main-start game-content-item-info'>
-              <view class="game-content-item-title">{{item.title}}</view>
+              <view class='flex-row flex-main-between flex-align-center'>
+                <view class="game-content-item-title">{{item.title}}</view>
+                <view class='flex-column flex-main-between flex-align-center game-play'>
+                  <view class="flex-row flex-main-start flex-align-center game-ediertag">
+                    <image style="height:32rpx;width:32rpx;margin-right:8rpx" src="../../assets/icon/hot16.png" />
+                    <view class="flex-column flex-main-end">十分火热</view>
+                  </view>
+                  <!-- <view class="flex-row flex-main-center flex-align-center game-playgame">开始</view> -->
+                  <!-- <view class="game-startplay">
+            <image class="game-startplay-img" src="../../assets/icon/play.png" />
+          </view> -->
+                </view>
+              </view>
               <view class="flex-row flex-main-start flex-align-center game-content-item-grade">
                 <image class="star" src="../../assets/icon/w_star.png" />
                 <image class="star" src="../../assets/icon/h_star.png" />
@@ -95,18 +107,15 @@
             </view>
           </view>
         </view>
-        <view class="flex-row flex-main-center flex-align-center">
+        <!-- <view class="flex-row flex-main-center flex-align-center">
           <view class='flex-column flex-main-between flex-align-center game-play'>
             <view class="flex-row flex-main-start flex-align-center game-ediertag">
               <image style="height:32rpx;width:32rpx;margin-right:8rpx" src="../../assets/icon/hot16.png" />
               <view class="flex-column flex-main-end">十分火热</view>
             </view>
             <view class="flex-row flex-main-center flex-align-center game-playgame">开始</view>
-            <!-- <view class="game-startplay">
-            <image class="game-startplay-img" src="../../assets/icon/play.png" />
-          </view> -->
           </view>
-        </view>
+        </view> -->
       </view>
       <view class='game-content-hr'></view>
     </view>

@@ -28,7 +28,7 @@ view{
     height:100rpx;
     box-shadow:0px -2px 2px #c7c7c7;
     width:100%;
-
+    background-color:#fff;
   }
   .image-size{
       height: 50rpx;
@@ -37,6 +37,9 @@ view{
   }
   .bottom-bar-item{
       font-size: 28rpx;
+      padding:0;
+      background-color:#fff;
+      border:0px;
   }
 .bottom-bar-play{
     margin:5rpx 20rpx;
@@ -111,3 +114,56 @@ view{
     text-align: center;
     margin-left: 5%;
 }
+.game-each-grade{
+    width:70%;
+    font-size:20rpx;
+    color:#808080;
+}
+.game-grade-container{
+    padding:10px;
+    border-bottom:6px solid #e2e2e2;
+
+}
+.game-user-comments{
+    margin-bottom:50px;
+}
+.grade-star{
+    height:24rpx;
+    width:24rpx;
+    margin:0 10rpx;
+}
+.game-each-process{
+    margin: 4rpx 0rpx;
+}
+.game-total-grade{
+    width: 30%;
+}
+.game-total-title{
+    font-size:34rpx;
+    margin-bottom:10rpx;
+}
+.game-total-number{
+    color:#f91b03;
+    font-size: 54rpx;
+}
+.game-process{
+    height:22rpx;
+}
+.game-your-grade{
+    border-bottom:6px solid #e2e2e2;
+    padding-bottom: 20rpx;
+}
+
+.star-empty{
+    height:52rpx;
+    width: 52rpx;
+    margin:0 10rpx;
+}
+
+.text-your-grade{
+    width:100%;
+    padding:30rpx 0 20rpx 60rpx;
+    font-size:34rpx;
+
+}
+button::after{ border: none; }

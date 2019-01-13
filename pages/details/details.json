@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "userinfo":"/components/userinfo/userinfo",
+    "user-comments":"/components/comments/comments"
+  }
 }

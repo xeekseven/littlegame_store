@@ -1,13 +1,13 @@
 <!-- pages/details/details.wxml -->
-<view class="flex-column flex-main-start" style="height:1000px">
+<view class="flex-column flex-main-start">
     <view class="flex-column flex-main-start">
         <view class="flex-row flex-main-start flex-align-start">
             <view class="flex-row flex-main-center flex-align-start game-logo">
                 <image style="height:140rpx;width:140rpx;" src="../../assets/img/logo.jpg" />
             </view>
             <view class="flex-column flex-main-start game-detail-content">
-                <view class="game-title">{{game_title}}</view>
-                <view wx:for="{{game_details}}" class="flex-row flex-main-start game-detail-item">
+                <view class="game-title">{{game_info['game_title']}}</view>
+                <view wx:for="{{game_info['game_details']}}" class="flex-row flex-main-start game-detail-item">
                     <view class="detail-item-title">{{item.key}}：</view>
                     <view class="detail-item-value">{{item.value}}</view>
                 </view>
@@ -18,50 +18,144 @@
             </view>
         </view>
         <view class="flex-row flex-main-start flex-align-end game-content-item-taglist">
-            <view wx:for="{{game_tags}}" wx:for-item="tagitem" wx:for-index="tagindex" class="flex-row flex-main-center flex-align-center game-content-item-tag">
-                {{tagitem}}
+            <view wx:for="{{game_info['game_tags']}}" class="flex-row flex-main-center flex-align-center game-content-item-tag">
+                {{item}}
             </view>
         </view>
     </view>
-    <view class="flex-column flex-main-start" >
+    <view class="flex-column flex-main-start">
         <view class="flex-row flex-main-center" style="box-shadow:0px 1px 1px #c7c7c7;">
-            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{menu_intro_class_name}}">
+            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol-active':'menu-symbol'}}">
                 <view>详情</view>
             </view>
-            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{menu_comments_class_name}}">
+            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol':'menu-symbol-active'}}">
                 <view>评论</view>
             </view>
         </view>
-        <view wx:if="{{selector == 'intro'}}" class="flex-column flex-main-center flex-align-start selector-intro">
+        <view wx:if="{{isIntro}}" class="flex-column flex-main-center flex-align-start selector-intro">
+            <view class="flex-row flex-main-start flex-align-center intro-title">游玩方式</view>
+            <view class='content-hr'></view>
+            <view class="intro-content">
+                <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                点击右下角的游玩，
+                <strong style="font-weight:bold;color:red">长按识别</strong>
+                打开的二维码图片，即可游玩
+            </view>
+            <view class='content-hr'></view>
             <view class="flex-row flex-main-start flex-align-center intro-title">简介</view>
             <view class='content-hr'></view>
-            <view class="intro-content" >
-                <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{intro_content}}
+            <view class="intro-content">
+                <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                {{game_info['intro_content']}}
             </view>
         </view>
-        <view wx:if="{{selector == 'comments'}}" class="flex-column flex-main-start selector-comments">
-            <view class="game-grade"></view>
-            <view class="game-your-grade"></view>
-            <view class="game-user-comments"></view>
+        <view wx:else class="flex-column flex-main-start selector-comments">
+            <view class="flex-row flex-main-between flex-align-center game-grade-container">
+                <view class="flex-column flex-main-start flex-align-center game-total-grade">
+                    <view class="game-total-title">游戏评分</view>
+                    <view class="game-total-number">4.5</view>
+                </view>
+                <view class="flex-column flex-main-start flex-align-start game-each-grade">
+                    <view class="flex-row flex-main-start flex-align-center game-each-process">
+                        <view class="flex-row flex-main-center flex-align-center">
+                            5
+                            <image class="grade-star" src="../../assets/icon/grade_star.svg" />
+                        </view>
+                        <view class="flex-row flex-main-center flex-align-center">
+                            <progress class="game-process" style="width:{{game_grade_list[4].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                        </view>
+                    </view>
+                    <view class="flex-row flex-main-start flex-align-center game-each-process">
+                        <view class="flex-row flex-main-center flex-align-center">
+                            4
+                            <image class="grade-star" src="../../assets/icon/grade_star.svg" />
+                        </view>
+                        <view class="flex-row flex-main-center flex-align-center">
+                            <progress class="game-process" style="width:{{game_grade_list[3].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                        </view>
+                    </view>
+                    <view class="flex-row flex-main-start flex-align-center game-each-process">
+                        <view class="flex-row flex-main-center flex-align-center">
+                            3
+                            <image class="grade-star" src="../../assets/icon/grade_star.svg" />
+                        </view>
+                        <view class="flex-row flex-main-center flex-align-center">
+                            <progress class="game-process" style="width:{{game_grade_list[2].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                        </view>
+                    </view>
+                    <view class="flex-row flex-main-start flex-align-center game-each-process">
+                        <view class="flex-row flex-main-center flex-align-center">
+                            2
+                            <image class="grade-star" src="../../assets/icon/grade_star.svg" />
+                        </view>
+                        <view class="flex-row flex-main-center flex-align-center">
+                            <progress class="game-process" style="width:{{game_grade_list[1].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                        </view>
+                    </view>
+                    <view class="flex-row flex-main-start flex-align-center game-each-process">
+                        <view class="flex-row flex-main-center flex-align-center">
+                            1
+                            <image class="grade-star" src="../../assets/icon/grade_star.svg" />
+                        </view>
+                        <view class="flex-row flex-main-center flex-align-center">
+                            <progress class="game-process" style="width:{{game_grade_list[0].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex-column flex-main-center flex-align-center game-your-grade">
+                <view class="flex-row flex-main-start text-your-grade">你的评价</view>
+                <view class="flex-column flex-main-start">
+                    <view class="flex-row flex-main-center">
+                        <!-- <userinfo ></userinfo> -->
+                    </view>
+                    <view class="flex-row flex-main-center flex-align-center">
+                        <view class="">
+                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        </view>
+                        <view class="">
+                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        </view>
+                        <view class="">
+                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        </view>
+                        <view class="">
+                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        </view>
+                        <view class="">
+                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        </view>
+                    </view>
+                    <view class="flex-row flex-main-center" style="font-size:30rpx;margin:8rpx;">
+                        轻点评分
+                    </view>
+                </view>
+            </view>
+            <view class="game-user-comments">
+                <user-comments gameId="{{game_info['game_id']}}"></user-comments>
+            </view>
         </view>
     </view>
 </view>
 <view class="flex-row flex-main-between flex-align-center game-operation">
     <view class="flex-row flex-main-center flex-align-center">
-        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
+        <view bind:tap="GoToHome" class="flex-row flex-main-center flex-align-center bottom-bar-item">
             <image src="../../assets/icon/home.svg" class="image-size" style="margin:10rpx 10rpx 20rpx 30rpx" />
             主页
         </view>
     </view>
     <view class="flex-row flex-main-center flex-align-center">
-        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
-            <image src="../../assets/icon/like.svg" class="image-size" />
+        <view class="flex-row flex-main-center flex-align-center bottom-bar-item" bind:tap="LikeGame">
+            <image wx:if="{{game_info['is_like']}}" src="../../assets/icon/like.svg" class="image-size" />
+            <image wx:else src="../../assets/icon/not_like.svg" class="image-size" />
             喜欢
         </view>
-        <view class="flex-row flex-main-center flex-align-center bottom-bar-item">
+        <button open-type="share" class="flex-row flex-main-center flex-align-center bottom-bar-item">
             <image src="../../assets/icon/share.svg" class="image-size" />
             分享
+        </button>
+        <view bind:tap="PlayGame" class="flex-row flex-main-center flex-align-center bottom-bar-play">
+            游玩
         </view>
-        <view class="flex-row flex-main-center flex-align-center bottom-bar-play">游玩</view>
     </view>
 </view>

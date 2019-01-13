@@ -1,0 +1,25 @@
+<!-- components/comments/comments.wxml -->
+<view wx:for="{{comments}}" class="flex-column flex-main-start comments-details">
+    <view class="flex-row flex-main-between">
+        <view class="flex-row flex-main-start">
+            <view>
+                <image class="userinfo-avatar" src="{{item.avatarUrl}}" />
+            </view>
+            <view class="flex-column flex-main-center">
+                <view class="user-nickname">{{item.nickName}}</view>
+                <view class="flex-row flex-main-start user-comment-star">
+                    <image wx:for="{{item.starNum}}" class="user-comment-star-image" src="../../assets/icon/star_active.svg" />
+                </view>
+                <view class="user-comment-time">{{item.time}}</view>
+            </view>
+            
+        </view>
+        <view class="flex-row flex-main-start flex-align-end user-zan">
+            <view class="zan-font">{{item.zanNum}}</view>
+            <image style="height:40rpx;width:40rpx;" src="../../assets/icon/zan.svg" />
+        </view>
+    </view>
+    <view class="comment-content">
+        {{item.content}}
+    </view>
+</view>

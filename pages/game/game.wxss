@@ -169,6 +169,7 @@
 .game-content-item-info {
   width: 360rpx;
   height: 140rpx;
+  width:100%;
 }
 
 .game-content-item-title {
@@ -186,6 +187,7 @@
 .game-content-item-taglist {
   height: 46rpx;
   margin-top: 6rpx;
+  overflow-x:hidden;
 }
 
 .game-content-item-tag {
@@ -208,7 +210,7 @@
 
 .game-play {
   width: 180rpx;
-  height: 144rpx;
+  /* height: 144rpx; */
 }
 
 .game-startplay-img {

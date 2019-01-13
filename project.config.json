@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.5.0",
 	"appid": "wxa04b04163573cfd2",
 	"projectname": "lg_store",
 	"debugOptions": {
