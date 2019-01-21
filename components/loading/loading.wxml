@@ -1,0 +1,6 @@
+<!--components/loading/loading.wxml-->
+<view class="flex-row flex-main-center flex-algin-center">
+    <view class="point one"></view>    
+    <view class="point two"></view>    
+    <view class="point three"></view>    
+</view>

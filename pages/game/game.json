@@ -1,1 +1,7 @@
-{}
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText":"动态",
+    "usingComponents": {
+        "loading":"/components/loading/loading"
+      }
+}

@@ -14,8 +14,8 @@
       </view>
     </view>
     <view class='game-pollimg'>
-      <swiper autoplay="true" circular="true" interval="2000" duration="500" previous-margin="0px" next-margin="0px">
-        <block wx:for="{{background}}" wx:key="*this">
+      <swiper autoplay="true" circular="true" interval="2000" duration="500" previous-margin="0px" next-margin="0px" style="height:170px">
+        <block wx:for="{{cloverBackgrounds}}" wx:key="*this">
           <swiper-item>
             <image class="swiper-item-img" src="../../assets/img/{{item}}"></image>
           </swiper-item>
@@ -120,5 +120,10 @@
       <view class='game-content-hr'></view>
     </view>
   </view>
-  <view class='page-bottom'>=== 已经到底了 ===</view>
+  <view wx:if="{{!downloading}}" class='page-bottom'>
+    === 暂 无 更 多 ===
+  </view>
+  <view wx:else class="flex-row flex-main-center flex-align-center" style="height:100%;padding:30rpx;">
+    <loading></loading>
+  </view>
 </view>

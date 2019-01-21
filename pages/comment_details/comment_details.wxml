@@ -1,0 +1,36 @@
+<!-- pages/comment_details/comment_details.wxml -->
+<view class="flex-column flex-main-start flex-align-center">
+    <view class="flex-row flex-main-between flex-align-center" style="width:100%">
+        <view class="comment-title">请评价</view>
+        <view>
+            <button bind:tap="PublishComment" class="flex-row flex-main-center flex-align-center btn-publish-comment">发表</button>
+        </view>
+    </view>
+    <view style="width:100%">
+        <view class="flex-row flex-main-start flex-align-center star-container">
+            <view class="" bind:tap="UserComment" data-index="1">
+                <image class="star-empty" src="{{evaluate_info.star_list[0].star_url}}" />
+            </view>
+            <view class="" bind:tap="UserComment" data-index="2">
+                <image class="star-empty" src="{{evaluate_info.star_list[1].star_url}}" />
+            </view>
+            <view class="" bind:tap="UserComment" data-index="3">
+                <image class="star-empty" src="{{evaluate_info.star_list[2].star_url}}" />
+            </view>
+            <view class="" bind:tap="UserComment" data-index="4">
+                <image class="star-empty" src="{{evaluate_info.star_list[3].star_url}}" />
+            </view>
+            <view class="" bind:tap="UserComment" data-index="5">
+                <image class="star-empty" src="{{evaluate_info.star_list[4].star_url}}" />
+            </view>
+        </view>
+    </view>
+    <view class="content-hr"></view>
+    <view class="flex-row flex-main-center" style="width:100%">
+        <view class="content-container" >
+            <textarea class="flex-row flex-main- flex-align-center comment-content" maxlength="1400" placeholder="随便说点什么吧...">
+            </textarea>
+        </view>
+    </view>
+    
+</view>

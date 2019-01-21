@@ -1,7 +1,7 @@
 // pages/details/details.js
 const app = getApp()
 var util = require('../../utils/util.js');
-
+var detail_service = require('../../services/detail.service.js')
 
 Page({
 
@@ -35,10 +35,12 @@ Page({
       { "key":1,"value":"150rpx" }
     ],
     userInfo:{},
+    userId:"userId1001",
     canIUse:wx.canIUse('button.open-type.getUserInfo'),
     star_empty_src:"../../assets/icon/star_empty.svg",
     star_active_src:"../../assets/icon/star_active.svg",
     evaluate_info:{
+      grade:0,
       star_list:[
         { "star_url": "../../assets/icon/star_empty.svg"},
         { "star_url": "../../assets/icon/star_empty.svg"},
@@ -54,6 +56,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(options['gameId'])
+    let userId = util.GetUserId()
+    this.setData({
+      userId:userId
+    })
     // wx.showModal({
     //  title: '提示',
     //  content: options['gameId']
@@ -86,6 +92,7 @@ Page({
     this.setData({
       'game_info.is_like':!this.data.game_info['is_like']
     })
+    detail_service.LikeGame(this.data.userId,this.data.game_info.gameId)
     console.log(this.data.game_info['is_like'])
   },
   changeActive:function(event){
@@ -101,10 +108,32 @@ Page({
       urls: url_list // 需要预览的图片http链接列表
     })
   },
-  ShareGame:function(event){
-    console.log("in share");
-      
-    },
+  UserComment:function(event){
+    let data = util.GetEventData(event)
+    let num = Number.parseInt(data.index)
+    this.CommentStartInit()
+    this.setData({
+      'evaluate_info.grade':num
+    })
+    for(let i = 0;i<num;i++){
+      const key = 'evaluate_info.star_list['+i+'].star_url';
+      this.setData({
+        [key]:this.data.star_active_src
+      })
+    }
+    let naviUrl = '../comment_details/comment_details?star_num='+num
+    wx.navigateTo({
+      url: naviUrl
+    })
+  },
+  CommentStartInit:function(){
+    for(let i = 0;i<5;i++){
+      const key = 'evaluate_info.star_list['+i+'].star_url';
+      this.setData({
+        [key]:this.data.star_empty_src
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

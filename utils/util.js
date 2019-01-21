@@ -16,8 +16,12 @@ const formatNumber = n => {
 
 const GetEventData = event => event.currentTarget.dataset
 
+const GetUserId = () => {
+  return 'userId1001';
+}
 
 module.exports = {
   formatTime: formatTime,
-  GetEventData:GetEventData
+  GetEventData:GetEventData,
+  GetUserId:GetUserId
 }

@@ -1,0 +1,43 @@
+/* pages/comment_details/comment_details.wxss */
+@import "../../utils/flexcss.wxss";
+
+.star-empty{
+    height:52rpx;
+    width: 52rpx;
+    margin:0 10rpx;
+}
+.btn-publish-comment{
+    font-size:28rpx;
+    height:56rpx;
+    width:120rpx;
+    border-radius:24rpx;
+    color:#fff;
+    background-color:#ed4a57;
+    font-family: Microsoft YaHei;
+    margin: 10rpx 20rpx;
+}
+.comment-title{
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    padding:20rpx 40rpx;
+    font-size:34rpx;
+    color:#757575;
+
+}
+.star-container{
+    margin:16rpx 30rpx;
+}
+.content-hr{
+    height: 2rpx;
+    width: 96%;
+    background-color: #e2e2e2;
+    text-align: center;
+    margin:0 5%;
+}
+.comment-content{
+    width: 100%;
+}
+.content-container{
+    width:90%;
+    margin-top: 30rpx;
+}

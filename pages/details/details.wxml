@@ -25,10 +25,10 @@
     </view>
     <view class="flex-column flex-main-start">
         <view class="flex-row flex-main-center" style="box-shadow:0px 1px 1px #c7c7c7;">
-            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol-active':'menu-symbol'}}">
+            <view bind:touchstart="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol-active':'menu-symbol'}}">
                 <view>详情</view>
             </view>
-            <view bind:tap="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol':'menu-symbol-active'}}">
+            <view bind:touchstart="changeActive" class="flex flex-row flex-main-center flex-align-center menu {{isIntro?'menu-symbol':'menu-symbol-active'}}">
                 <view>评论</view>
             </view>
         </view>
@@ -48,6 +48,7 @@
                 <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
                 {{game_info['intro_content']}}
             </view>
+            <view style="height:100rpx;width:100%"></view>
         </view>
         <view wx:else class="flex-column flex-main-start selector-comments">
             <view class="flex-row flex-main-between flex-align-center game-grade-container">
@@ -62,7 +63,7 @@
                             <image class="grade-star" src="../../assets/icon/grade_star.svg" />
                         </view>
                         <view class="flex-row flex-main-center flex-align-center">
-                            <progress class="game-process" style="width:{{game_grade_list[4].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                            <progress class="game-process" style="width:{{game_grade_list[4].value}}" stroke-width="9" percent="100"  color="#ed4a57" />
                         </view>
                     </view>
                     <view class="flex-row flex-main-start flex-align-center game-each-process">
@@ -71,7 +72,7 @@
                             <image class="grade-star" src="../../assets/icon/grade_star.svg" />
                         </view>
                         <view class="flex-row flex-main-center flex-align-center">
-                            <progress class="game-process" style="width:{{game_grade_list[3].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                            <progress class="game-process" style="width:{{game_grade_list[3].value}}" stroke-width="9" percent="100" color="#ec707a" />
                         </view>
                     </view>
                     <view class="flex-row flex-main-start flex-align-center game-each-process">
@@ -80,7 +81,7 @@
                             <image class="grade-star" src="../../assets/icon/grade_star.svg" />
                         </view>
                         <view class="flex-row flex-main-center flex-align-center">
-                            <progress class="game-process" style="width:{{game_grade_list[2].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                            <progress class="game-process" style="width:{{game_grade_list[2].value}}" stroke-width="9" percent="100" color="#ec8a92" />
                         </view>
                     </view>
                     <view class="flex-row flex-main-start flex-align-center game-each-process">
@@ -89,7 +90,7 @@
                             <image class="grade-star" src="../../assets/icon/grade_star.svg" />
                         </view>
                         <view class="flex-row flex-main-center flex-align-center">
-                            <progress class="game-process" style="width:{{game_grade_list[1].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                            <progress class="game-process" style="width:{{game_grade_list[1].value}}" stroke-width="9" percent="100" color="#f1a5ab" />
                         </view>
                     </view>
                     <view class="flex-row flex-main-start flex-align-center game-each-process">
@@ -98,7 +99,7 @@
                             <image class="grade-star" src="../../assets/icon/grade_star.svg" />
                         </view>
                         <view class="flex-row flex-main-center flex-align-center">
-                            <progress class="game-process" style="width:{{game_grade_list[0].value}}" stroke-width="9" percent="100" color="#ed4a57" />
+                            <progress class="game-process" style="width:{{game_grade_list[0].value}}" stroke-width="9" percent="100" color="#d7d7d7" />
                         </view>
                     </view>
                 </view>
@@ -110,20 +111,20 @@
                         <!-- <userinfo ></userinfo> -->
                     </view>
                     <view class="flex-row flex-main-center flex-align-center">
-                        <view class="">
-                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        <view class="" bind:tap="UserComment" data-index="1">
+                            <image class="star-empty" src="{{evaluate_info.star_list[0].star_url}}" />
                         </view>
-                        <view class="">
-                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        <view class="" bind:tap="UserComment" data-index="2">
+                            <image class="star-empty" src="{{evaluate_info.star_list[1].star_url}}" />
                         </view>
-                        <view class="">
-                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        <view class="" bind:tap="UserComment" data-index="3">
+                            <image class="star-empty" src="{{evaluate_info.star_list[2].star_url}}" />
                         </view>
-                        <view class="">
-                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        <view class="" bind:tap="UserComment" data-index="4">
+                            <image class="star-empty" src="{{evaluate_info.star_list[3].star_url}}" />
                         </view>
-                        <view class="">
-                            <image class="star-empty" src="../../assets/icon/star_empty.svg" />
+                        <view class="" bind:tap="UserComment" data-index="5">
+                            <image class="star-empty" src="{{evaluate_info.star_list[4].star_url}}" />
                         </view>
                     </view>
                     <view class="flex-row flex-main-center" style="font-size:30rpx;margin:8rpx;">
@@ -132,7 +133,7 @@
                 </view>
             </view>
             <view class="game-user-comments">
-                <user-comments gameId="{{game_info['game_id']}}"></user-comments>
+                <user-comments gameId="{{game_info['game_id']}}" userId="{{userId}}"></user-comments>
             </view>
         </view>
     </view>

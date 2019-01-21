@@ -1,0 +1,21 @@
+/* components/loading/loading.wxss */
+
+.point{
+    width:10px;
+    height:10px;
+    background:#8c8c8c;
+    border-radius:50%;
+    float:left;
+    margin-left:5px;
+    animation:myAnima 1.2s ease-in-out infinite; 
+}
+.two{
+    animation-delay: 200ms;
+}
+.three{
+    animation-delay: 400ms;
+}
+@keyframes myAnima{
+    from {opacity: 0.8}
+    to{opacity: 0}
+}

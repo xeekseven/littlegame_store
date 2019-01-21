@@ -1,16 +1,16 @@
 {
   "pages": [
-
     "pages/game/game",
     "pages/index/index",
     "pages/logs/logs",
     "pages/search/search",
     "pages/person/person",
     "pages/details/details",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/comment_details/comment_details"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小游戏体验店",
     "navigationBarTextStyle": "black"

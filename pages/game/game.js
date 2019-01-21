@@ -9,7 +9,8 @@ Page({
    */
   data: {
     search_key: '',
-    background: ['lb1.jpg', 'lb2.jpg', 'lb3.jpg'],
+    cloverBackgrounds: ['clover1.jpg', 'clover2.jpg', 'clover3.jpg'],
+    currentCategoryKey:'综合',
     categoryrows1: [
       { 'image': '../../assets/icon/rpg-dragon.png', 'title': 'rpg' },
       { 'image': '../../assets/icon/manage.png', 'title': '经营' },
@@ -25,6 +26,9 @@ Page({
       { 'image': '../../assets/icon/poker.png', 'title': '棋牌' },
       { 'image': '../../assets/icon/unknown.png', 'title': '独立'}
       ],
+      pageIndex:1,
+      pageSize:20,
+      downloading:false,
     gamelist: [
       { id:'aefa1-123', 'rank': 1, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤', 'grade': 5.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' },
       { id:'1fafa-112', 'rank': 2, 'image_path': '../../assets/img/logo.jpg', 'title': '使命召唤2', 'grade': 1.5, 'tags': ['射击', '人生', '哲理', '战争'], 'des': 'hot' }
@@ -32,6 +36,9 @@ Page({
     filterClass:{
       index:1,
       class_name:'triangle-up'
+    },
+    classKV:{
+
     }
   },
   changeFilterClass:function(event){
@@ -68,6 +75,7 @@ Page({
     //let thisGames = this.data.gamelist;
     //let gameRes = thisGames.concat(result)
     this.setData({
+      currentCategoryKey:key,
       gamelist:result
     })
   },
@@ -97,7 +105,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -125,20 +133,48 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    if(!this.loading){
+      this.loading=true
+      let key = this.data.currentCategoryKey
+      let result = gameService.GetGames(key,1,1);
+      console.log(result)
+      this.setData({
+        gamelist:result
+      })
+      this.loading = false
+    }
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(!this.data.downloading){
+      this.setData({
+        downloading:true
+      })
+      setTimeout(()=>{
+        this.getGameList(this.data.currentCategoryKey,this.data.pageIndex+1,this.data.pageSize)
+        this.setData({
+          downloading:false
+        })
+      },3000);
+    }
   },
-
+  getGameList:function(categoryKey,pageIndex,pageSize){
+    let newGameList = gameService.GetGames(categoryKey,pageIndex,pageSize)
+    this.loading = true
+    console.log(newGameList)
+    this.setData({
+      gamelist:this.data.gamelist.concat(newGameList)
+    })
+    this.loading = false
+  },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   }
 })
